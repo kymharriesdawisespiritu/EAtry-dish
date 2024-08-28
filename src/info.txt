@@ -1,0 +1,5 @@
+Api keys : AIzaSyBc7zJJminNAm7h6EAcvZbZ4mV2NrsTPJ8
+chanel id : UC4oC0wpgm2ae-mEa8slguNQ
+uploads : UU4oC0wpgm2ae-mEa8slguNQ
+
+url : https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU4oC0wpgm2ae-mEa8slguNQ&key=AIzaSyBc7zJJminNAm7h6EAcvZbZ4mV2NrsTPJ8
