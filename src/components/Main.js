@@ -7,6 +7,8 @@ function Main() {
 
   const [videos, setVideos] = useState([]);
 
+  const [descriptions, setDescriptions] = useState([]);
+
 
   useEffect(() => {
 
@@ -22,8 +24,12 @@ function Main() {
 
           setVideos((prevVideos) => [...prevVideos, item.snippet.resourceId.videoId]);
 
-        });
+      setDescriptions((prevDescriptions) => [...prevDescriptions, item.snippet.description]);
 
+        }, 
+        
+      
+      );
         console.log(data);
 
       })
@@ -38,21 +44,20 @@ function Main() {
     <div>
 
       {titles.map((title, index) => (
-
         <div key={index}>
-          <h1>{titles[title]}</h1>
-
+          <h1>{title}</h1>
+          <h1>{descriptions}</h1>
           <div href={`https://www.youtube.com/watch?v=${videos[index]}`}>
           <video className="h-80" controls>
-
             <source type="video/mp4" />
-            
           </video>
           </div>
         </div>
-
       ))}
-
+      {descriptions.map((description,index) => (
+        <div>{descriptions}</div>
+      ))}
+      <div></div>
     </div>
 
   );
