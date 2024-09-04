@@ -129,12 +129,7 @@ const MealList = () => {
       </div>
     </nav>
     <div class="" style={{display:'flex', flexDirection:'row'}}>
-      <div class="flex justify-between mb-4">
-        {/* Add the banner component */}
-        <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
-          Sign in
-        </button>
-      </div>
+     
       <div class="flex flex-wrap -mx-4">
         <div class=" md:w-1/2 xl:w-1/3 px-4 mb-4">
           
