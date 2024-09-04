@@ -11,11 +11,7 @@ const MealDetail = ({ meal }) => {
         <p>Tags: {meal.strTags}</p>
       </div>
       <div className="mt-4">
-        <h3>Recommended meals</h3>
         <ul>
-          {/* todo: implement recommended meals logic */}
-          <li>Recommended meal 1</li>
-          <li>Recommended meal 2</li>
         </ul>
       </div>
     </div>
