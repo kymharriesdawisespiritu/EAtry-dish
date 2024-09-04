@@ -1,27 +1,11 @@
-// Card.js (no changes)
-import React from "react";
+import React from 'react';
 
-const Card = ({ meal, imageUrl, searchQuery }) => {
+const Card = ({ meal, imageUrl, onClick }) => {
   return (
-    <div className="card w-64 h-80 m-4 bg-white rounded-lg shadow-md">
-      {searchQuery ? (
-        <div className="w-64 h-64 bg-white rounded shadow-md">
-          <img src={imageUrl} alt={meal.strMeal} className="w-full h-48 object-cover" />
-          <h2 className="text-lg font-bold">{meal.strMeal}</h2>
-          <p>{meal.strCategory}</p>
-        </div>
-      ) : (
-        <div>
-          <img
-            src={meal.strCategoryThumb}
-            alt={meal.strCategory}
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h2 className="text-lg font-bold">{meal.strCategory}</h2>
-          </div>
-        </div>
-      )}
+    <div className="h-auto max-w-lg transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0">
+      <img src={imageUrl} alt={meal.strMeal} style={{ width: 100, height: 100 }} onClick={() => onClick(meal)} className="h-auto max-w-lg transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0" />
+      <h2 >{meal.strMeal}</h2>
+      <p>{meal.strCategory}</p>
     </div>
   );
 };

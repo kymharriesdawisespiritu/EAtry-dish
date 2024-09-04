@@ -1,12 +1,20 @@
-import Header from './components/Header';
+
 import Meal_list from './pages/Meal_list';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import SignInPage from "../src/components/SigninPage";
 function App() {
   return (
 
     <BrowserRouter>
-     <Header/> 
-     <Meal_list />
+    
+    
+     <Routes>
+
+        <Route path="/" element={<Meal_list />} />
+
+        <Route path="/signin" element={<SignInPage />} />
+
+      </Routes>
     </BrowserRouter>
 
   );
