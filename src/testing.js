@@ -1,86 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import Card from '../components/Card';
-import MealDetail from '../components/MealDetail';
-import Banner from '../components/Banner'; // new component
-import TestemonyCard from '../components/TestemonyCard'
+import React, { Component } from 'react'
 
-import indo from '../images/indomixicon.svg'
-import 'flowbite'
-
-const MealList = () => {
-  const [categories, setCategories] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [meals, setMeals] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [defaultImages, setDefaultImages] = useState([]);
-  const [selectedMeal, setSelectedMeal] = useState(null); // new state
-  
-
-
-  useEffect(() => {
-    async function fetchCategories() {
-      try {
-        const response = await fetch('https://themealdb.com/api/json/v1/1/categories.php');
-        const data = await response.json();
-        setCategories(data.categories);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchCategories();
-
-    async function fetchDefaultImages() {
-      try {
-        const response = await fetch('https://themealdb.com/api/json/v1/1/filter.php?c=Beef');
-        const data = await response.json();
-        setDefaultImages(data.meals);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchDefaultImages();
-  }, []);
-
-  const handleSearch = (event) => {
-    event.preventDefault();
-    setSearchQuery(event.target.value);
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const response = await fetch(`https://themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`);
-      const data = await response.json();
-    if (data.meals == null) {
-      alert(`Oops invalid ${searchQuery}`) 
-      searchQuery = setSearchQuery('');
-    }
-      setMeals(data.meals);
-      setSearchQuery('');
-       // clear search query
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleCategoryClick = async (category) => {
-    setSelectedCategory(category);  
-    try {
-      const response = await fetch(`https://themealdb.com/api/json/v1/1/filter.php?c=${category.strCategory}`);
-      const data = await response.json();
-      setMeals(data.meals);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  const handleCardClick = (meal) => {
-    setSelectedMeal(meal);
-  };
-  return (
-    <>
-     <nav class="bg-white border-gray-200 dark:bg-gray-900">
+export default class testing extends Component {
+  render() {
+    return (
+         <>
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-0">
-    
       
       <div >
       <form onSubmit={handleSubmit} class="max-w-md mx-auto">
@@ -150,14 +75,14 @@ const MealList = () => {
         </div>
         <div className="">
           <div style={{
-                      display: 'grid',
-                      gridTemplateColumns: '1fr 2fr 1fr',
-                      gridGap: '10px',
-                      width: '100%',
-                      height: '100vh',
-                      margin: '0 auto'
+display: 'grid',
+gridTemplateColumns: '1fr 2fr 1fr',
+gridGap: '10px',
+width: '100%',
+height: '100vh',
+margin: '0 auto'
 
-                      }}>
+}}>
             {meals.length > 0 ? (
              <div style={{
 
@@ -198,27 +123,25 @@ const MealList = () => {
           {selectedMeal ? (
             <MealDetail meal={selectedMeal} />
 
-                ) : (
+) : (
 
-                <img src={indo} alt="Default Image" className="h-auto max-w-lg transition-all duration-300 rounded-lg blur-sm hover:blur-none" />
+<img src={indo} alt="Default Image" className="h-auto max-w-lg transition-all duration-300 rounded-lg blur-sm hover:blur-none" />
 
-                )}
+)}
           
               </div>
           
             )}
             </div>
-            <TestemonyCard />
+           
           </div>
-          
+
         </div>
 
       </div>
 
     </div>
-    
-    </>
-  );
-};
-
-export default MealList;
+      </>
+    )
+  }
+}
