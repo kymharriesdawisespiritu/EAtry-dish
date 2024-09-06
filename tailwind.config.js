@@ -28,3 +28,10 @@ module.exports = {
     flowbite.plugin(),
   ],
 };
+module.exports = {
+  theme: {
+    colors: {
+      // Configure your color palette here
+    }
+  }
+}

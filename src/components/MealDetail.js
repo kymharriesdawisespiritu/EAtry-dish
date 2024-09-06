@@ -1,27 +1,38 @@
 import React from 'react';
 import '../componentStyler/MealStyle.css'
+const MealDetail = ({ meal, recipe }) => {
+  if (!meal || !recipe) return null;
 
-const MealDetail = ({ meal }) => {
   return (
-    <div class="wrap animate pop">
-	<div class="overlay">
-		<div class="overlay-content animate slide-left delay-2">
-			<h1 class="animate slide-left pop delay-4">{meal.strMeal}</h1>
-			<p class="animate slide-left pop delay-5" style={{color: 'white', marginBottom: '2.5rem'}}>Kingdom: <em>Plantae</em></p>
-		</div>
-		<div class="image-content animate slide delay-5" style={{backgroundImage: `url(${meal.strMealThumb})`}}></div>
-		<div class="dots animate">
-			<div class="dot animate slide-up delay-6"></div>
-			<div class="dot animate slide-up delay-7"></div>
-			<div class="dot animate slide-up delay-8"></div>
-		</div>
-	</div>
-	<div class="text">
-		<p><img class="inset" src={meal.strMealThumb} alt="" />Trees are woody perennial plants that are a member of the kingdom <em>Plantae</em>. All species of trees are grouped by their genus, family, and order. This helps make identifying and studying trees easier.</p>
-		<p>Apart from providing oxygen for the planet and beauty when they bloom or turn color, trees are very useful. Certain species of hardwood and softwood trees are excellent for timber, making furniture, and paper.</p>
-		<p>When managed properly, trees are a good source of renewable energy and construction material.</p>
-	</div>
+	<>
+
+	<div class="wrap-card card-animate-card card-pop-card">
+  <div class="overlay-card">
+    <div class="overlay-content-card card-animate-card slide-left-card delay-2-card">
+      <h1 class="h1-card card-animate-card slide-left-card card-pop-card delay-4-card">{meal.strTags}</h1>
+      <p class="p-card card-animate-card slide-left-card card-pop-card delay-5-card" style={{color: 'white', marginBottom: '2.5rem'}}>: <em>{meal.strMeal}</em></p>
+    </div>
+    <div class="image-content-card card-animate-card slide-card delay-5-card" style={{backgroundImage: `url(${meal.strMealThumb})`}}></div>
+    <div class="dots-card card-animate-card">
+      <div class="dot-card card-animate-card slide-up-card delay-6-card"></div>
+      <div class="dot-card card-animate-card slide-up-card delay-7-card"></div>
+      <div class="dot-card card-animate-card slide-up-card delay-8-card"></div>
+    </div>
+  </div>
+  <div class="text-card">
+    <p className='p-card'><img class="inset-card" src={meal.strMealThumb} alt="" />{recipe.ingredients ? (
+        <ul>
+          {recipe.ingredients.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>	</p>
+      )} <em>{meal.strMeal}</em>Instructions: {recipe.strInstructions}</p>
+  
+  </div>
 </div>
+	</>
   );
 };
 

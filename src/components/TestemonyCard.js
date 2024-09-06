@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 function TestemonyCard() {
-  
   return (
     <div>
       <div class="min-w-screen min-h-screen bg-gray-50 flex items-center justify-center py-5">
