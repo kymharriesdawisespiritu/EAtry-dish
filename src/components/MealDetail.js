@@ -6,21 +6,21 @@ const MealDetail = ({ meal, recipe }) => {
   return (
 	<>
 
-	<div class="wrap-card card-animate-card card-pop-card">
-  <div class="overlay-card">
-    <div class="overlay-content-card card-animate-card slide-left-card delay-2-card">
-      <h1 class="h1-card card-animate-card slide-left-card card-pop-card delay-4-card">{meal.strTags}</h1>
-      <p class="p-card card-animate-card slide-left-card card-pop-card delay-5-card" style={{color: 'white', marginBottom: '2.5rem'}}>: <em>{meal.strMeal}</em></p>
+	<div className="wrap-card card-animate-card card-pop-card">
+  <div className="overlay-card">
+    <div className="overlay-content-card card-animate-card slide-left-card delay-2-card">
+      <h1 className="h1-card card-animate-card slide-left-card card-pop-card delay-4-card">{meal.strTags}</h1>
+      <p className="p-card card-animate-card slide-left-card card-pop-card delay-5-card" style={{color: 'white', marginBottom: '2.5rem'}}>: <em>{meal.strMeal}</em></p>
     </div>
-    <div class="image-content-card card-animate-card slide-card delay-5-card" style={{backgroundImage: `url(${meal.strMealThumb})`}}></div>
-    <div class="dots-card card-animate-card">
-      <div class="dot-card card-animate-card slide-up-card delay-6-card"></div>
-      <div class="dot-card card-animate-card slide-up-card delay-7-card"></div>
-      <div class="dot-card card-animate-card slide-up-card delay-8-card"></div>
+    <div className="image-content-card card-animate-card slide-card delay-5-card" style={{backgroundImage: `url(${meal.strMealThumb})`}}></div>
+    <div className="dots-card card-animate-card">
+      <div className="dot-card card-animate-card slide-up-card delay-6-card"></div>
+      <div className="dot-card card-animate-card slide-up-card delay-7-card"></div>
+      <div className="dot-card card-animate-card slide-up-card delay-8-card"></div>
     </div>
   </div>
-  <div class="text-card">
-    <p className='p-card'><img class="inset-card" src={meal.strMealThumb} alt="" />{recipe.ingredients ? (
+  <div className="text-card">
+    <p className='p-card'><img className="inset-card" src={meal.strMealThumb} alt="" />{recipe.ingredients ? (
         <ul>
           {recipe.ingredients.map((ingredient, index) => (
             <li key={index}>{ingredient}</li>
