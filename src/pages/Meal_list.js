@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Card from '../components/Card';
 import MealDetail from '../components/MealDetail';
 import Banner from '../components/Banner'; // new component
+import Footer from '../components/Footer';
+import Docs from './Docs';
 import TestemonyCard from '../components/TestemonyCard'
 import indo from '../images/indomixicon.svg'
 import 'flowbite'
@@ -148,9 +150,10 @@ const MealList = () => {
     }
 
   };
+  
   return (
     <>
-     <nav className="bg-#D61F69 border-gray-200 dark:bg-gray-900">
+     <nav className=" border-gray-200 dark:bg-gray-900" style={{backgroundColor:'#FFFF00'}}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-0">
     
       
@@ -196,6 +199,17 @@ const MealList = () => {
        placeholder="Search for a meal"
        type="search" id="default-search" className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
       </div>
+      <ul style={{backgroundColor:'#FFFF00', textShadow:'1px solid #FF9800'}} className="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-black-700">
+        <li>
+          <a href="#" className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a href="#" className="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+        </li>
+        <li>
+           <a href="#" className="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Docs</a>
+        </li>
+      </ul>
       <div className="flex md:order-2">
         <Banner/>
       </div>
@@ -203,7 +217,7 @@ const MealList = () => {
   </div>
 </nav>
 
-<div  style={{display:'flex', flexDirection:'row'}}>
+<div  style={{display:'flex', flexDirection:'row' }} className="max-w-xxl  border border-gray-200 rounded-lg shadow  ">
  
   <div className="flex flex-wrap -mx-4">
     <div className=" md:w-1/2 xl:w-1/3 px-4 mb-4" >
@@ -212,7 +226,8 @@ const MealList = () => {
           <li key={category.idCategory} onClick={() => handleCategoryClick(category)}>
             <button
               type="button"
-              className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+              style={{Background: '#F7F7F7'}}
+              className="py-2.5 px-5 me-2 mb-2 text-sm font-medium  focus:outline-none bg-white rounded-full  hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
             >
               {category.strCategory}
             </button>
@@ -220,101 +235,123 @@ const MealList = () => {
         ))}
       </ul>
     </div>
-    <div  style={{
-                  display: 'grid',
-                  gridTemplateColumns: '33.33% 66.67%',
-                  gridGap: '0px',
-                  width: '100%',
-                  height: '100vh',
-                  margin: '0 auto'
+    <div style={{
+  display: 'flex',
+  flexDirection: 'row',
+  width: '100%',
+  height: '80vh',
+  margin: '0 auto',
+  '@media (max-width: 768px)': {
+  height: '0vh',
 
-                  }}>
-      
-        {meals.length > 0 ? (
-         <div style={{
-
-          overflowY: 'scroll',
-          height: '60vh',
-          backgroundColor: 'transparent'
-      
-        }}>
-          <div >
-            {meals.map((meal) => (
-              <Card
-                key={meal.idMeal}
-                meal={meal}
-                imageUrl={meal.strMealThumb}
-                searchQuery={searchQuery}
-                onClick={handleCardClick}
-              />
-            ))}
-          </div>
-          </div>
-        ) : (
-          <div style={{ backgroundColor: 'transparent',
-            overflowY:'scroll',
-            height:'70%',
-           }}>
-            {defaultImages.map((meal) => (
-              <Card
-                key={meal.idMeal}
-                meal={meal}
-                imageUrl={meal.strMealThumb}
-                onClick={handleCardClick}
-              />
-            ))}
-          </div>
-        )}
-        <div className="flex items-start justify-center">
-           {selectedMeal ? (
-            <MealDetail meal={selectedMeal} recipe={recipe} />
-        ) : (       
-          <div className="flex items-start justify-center">          
-       
-         {selectedMeal ? (
-          <MealDetail meal={selectedMeal} recipe={recipe} />
-
-            ) : (
-            <div className="wrap-card card-animate-card card-pop-card">
-              <div className="overlay-card">
-                <div className="overlay-content-card card-animate-card slide-left-card delay-2-card">
-                  <h1 className="h1-card card-animate-card slide-left-card card-pop-card delay-4-card"></h1>
-                  <p className="p-card card-animate-card slide-left-card card-pop-card delay-5-card" style={{color: 'white', marginBottom: '2.5rem'}}>: <em></em></p>
-                </div>
-                <div className="image-content-card card-animate-card slide-card delay-5-card" style={{backgroundImage: `url(https://media.gettyimages.com/id/1363638825/photo/vegan-plant-based-asian-food-recipes-with-rice-and-brown-rice-as.jpg?s=612x612&w=gi&k=20&c=QuqQ2wgvQazlitFvRhMuR2_nWZEf5CB3xa3FS4R0ffM=)`}}></div>
-                <div className="dots-card card-animate-card">
-                  <div className="dot-card card-animate-card slide-up-card delay-6-card"></div>
-                  <div className="dot-card card-animate-card slide-up-card delay-7-card"></div>
-                  <div className="dot-card card-animate-card slide-up-card delay-8-card"></div>
-                </div>
-              </div>
-              <div className="text-card">
-                <p className='p-card'><img className="inset-card" src='https://media.gettyimages.com/id/1363638825/photo/vegan-plant-based-asian-food-recipes-with-rice-and-brown-rice-as.jpg?s=612x612&w=gi&k=20&c=QuqQ2wgvQazlitFvRhMuR2_nWZEf5CB3xa3FS4R0ffM=' alt="" /></p>
-                    <ul>
-                     <li>Choose</li>
-                     <li>Order</li>
-                     <li>Place to serve</li>
-                     <li>Eat</li>
-                    </ul>
-                 
-                    <p>none
-                  <em>Healthy foods are those that provide you with the nutrients you need to sustain your body's well-being and retain energy. Water, carbohydrates, fat, protein, vitamins, and minerals are the key nutrients that make up a healthy, balanced diet.</em>Instructions: </p>
-              
-              </div>
-            </div>
-            )}
-      
-          </div>
-      
-        )}
+    },
+}}>
+  
+  {/* Left side */}
+  <div  className="card-res">
+    {meals.length > 0 ? (
+      <div style={{
+        overflowY: 'scroll',
+        height: '80%', 
+        backgroundColor: 'transparent',
+      }}>
+        <div >
+          {meals.map((meal) => (
+            <Card
+              key={meal.idMeal}
+              meal={meal}
+              imageUrl={meal.strMealThumb}
+              searchQuery={searchQuery}
+              onClick={handleCardClick}
+            />
+          ))}
         </div>
-      
-    </div>  
+      </div>
+    ) : (
+      <div style={{
+        backgroundColor: 'transparent',
+        overflowY: 'scroll',
+        height: '80%',
+      }}>
+        {defaultImages.map((meal) => (
+          <Card
+            key={meal.idMeal}
+            meal={meal}
+            imageUrl={meal.strMealThumb}
+            onClick={handleCardClick}
+          />
+        ))}
+      </div>
+    )}
+  </div>
+
+  <div style={{
+    height: '100vh', 
+  }}>
+    {selectedMeal ? (
+      <MealDetail meal={selectedMeal} recipe={recipe} />
+    ) : (
+      <div className="wrap-card card-animate-card card-pop-card">
+
+          <div className="overlay-card">
+
+            <div className="overlay-content-card card-animate-card slide-left-card delay-2-card">
+
+              <h1 className="h1-card card-animate-card slide-left-card card-pop-card delay-4-card"></h1>
+
+              <p className="p-card card-animate-card slide-left-card card-pop-card delay-5-card" style={{color: 'white', marginBottom: '2.5rem'}}>: <em></em></p>
+
+            </div>
+
+            <div className="image-content-card card-animate-card slide-card delay-5-card" style={{backgroundImage: `url(https://media.gettyimages.com/id/1363638825/photo/vegan-plant-based-asian-food-recipes-with-rice-and-brown-rice-as.jpg?s=612x612&w=gi&k=20&c=QuqQ2wgvQazlitFvRhMuR2_nWZEf5CB3xa3FS4R0ffM=)`}}></div>
+
+            <div className="dots-card card-animate-card">
+
+              <div className="dot-card card-animate-card slide-up-card delay-6-card"></div>
+
+              <div className="dot-card card-animate-card slide-up-card delay-7-card"></div>
+
+              <div className="dot-card card-animate-card slide-up-card delay-8-card"></div>
+
+            </div>
+
+          </div>
+
+          <div className="text-card">
+
+            <p className='p-card'><img className="inset-card" src='https://media.gettyimages.com/id/1363638825/photo/vegan-plant-based-asian-food-recipes-with-rice-and-brown-rice-as.jpg?s=612x612&w=gi&k=20&c=QuqQ2wgvQazlitFvRhMuR2_nWZEf5CB3xa3FS4R0ffM=' alt="" /></p>
+
+                <ul>
+
+                 <li>Choose</li>
+
+                 <li>Order</li>
+
+                 <li>Place to serve</li>
+
+                 <li>Eat</li>
+
+                </ul>
+
+             
+
+                <p>none
+
+              <em>Healthy foods are those that provide you with the nutrients you need to sustain your body's well-being and retain energy. Water, carbohydrates, fat, protein, vitamins, and minerals are the key nutrients that make up a healthy, balanced diet.</em>Instructions: </p>
+
+          
+
+          </div>
+
+        </div>
+    )}
+  </div>
+</div>  
 
   </div>
 
 </div>
-
+<Footer/>
 </>
   );
 };

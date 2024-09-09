@@ -141,6 +141,276 @@ margin: '0 auto'
       </div>
 
     </div>
+    <div className="flex flex-wrap -mx-4">
+    <div className=" md:w-1/2 xl:w-1/3 px-4 mb-4" >
+    <ul className="list-none mb-1 flex items-start justify-evenly py-1 md:py-1 flex-wrap">
+        {categories.map((category) => (
+          <li key={category.idCategory} onClick={() => handleCategoryClick(category)}>
+            <button
+              type="button"
+              style={{Background: '#F7F7F7'}}
+              className="py-2.5 px-5 me-2 mb-2 text-sm font-medium  focus:outline-none bg-white rounded-full  hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            >
+              {category.strCategory}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div style={{
+  display: 'flex',
+  flexDirection: 'row',
+  width: '100%',
+  height: '100vh',
+  margin: '0 auto'
+}}>
+  
+  {/* Left side */}
+  <div style={{
+    width: '33.33%', // Add this line
+    height: '100vh', // Update this line
+    backgroundColor: 'transparent'
+  }}>
+    {meals.length > 0 ? (
+      <div style={{
+        overflowY: 'scroll',
+        height: '50%', // Update this line
+        backgroundColor: 'transparent'
+      }}>
+        <div >
+          {meals.map((meal) => (
+            <Card
+              key={meal.idMeal}
+              meal={meal}
+              imageUrl={meal.strMealThumb}
+              searchQuery={searchQuery}
+              onClick={handleCardClick}
+            />
+          ))}
+        </div>
+      </div>
+    ) : (
+      <div style={{
+        backgroundColor: 'transparent',
+        overflowY: 'scroll',
+        height: '50%', // Update this line
+      }}>
+        {defaultImages.map((meal) => (
+          <Card
+            key={meal.idMeal}
+            meal={meal}
+            imageUrl={meal.strMealThumb}
+            onClick={handleCardClick}
+          />
+        ))}
+      </div>
+    )}
+  </div>
+
+  {/* Right side */}
+  <div style={{
+    width: '66.66%', // Add this line
+    height: '100vh', // Update this line
+  }}>
+    {selectedMeal ? (
+      <MealDetail meal={selectedMeal} recipe={recipe} />
+    ) : (
+      <div className="wrap-card card-animate-card card-pop-card">
+
+          <div className="overlay-card">
+
+            <div className="overlay-content-card card-animate-card slide-left-card delay-2-card">
+
+              <h1 className="h1-card card-animate-card slide-left-card card-pop-card delay-4-card"></h1>
+
+              <p className="p-card card-animate-card slide-left-card card-pop-card delay-5-card" style={{color: 'white', marginBottom: '2.5rem'}}>: <em></em></p>
+
+            </div>
+
+            <div className="image-content-card card-animate-card slide-card delay-5-card" style={{backgroundImage: `url(https://media.gettyimages.com/id/1363638825/photo/vegan-plant-based-asian-food-recipes-with-rice-and-brown-rice-as.jpg?s=612x612&w=gi&k=20&c=QuqQ2wgvQazlitFvRhMuR2_nWZEf5CB3xa3FS4R0ffM=)`}}></div>
+
+            <div className="dots-card card-animate-card">
+
+              <div className="dot-card card-animate-card slide-up-card delay-6-card"></div>
+
+              <div className="dot-card card-animate-card slide-up-card delay-7-card"></div>
+
+              <div className="dot-card card-animate-card slide-up-card delay-8-card"></div>
+
+            </div>
+
+          </div>
+
+          <div className="text-card">
+
+            <p className='p-card'><img className="inset-card" src='https://media.gettyimages.com/id/1363638825/photo/vegan-plant-based-asian-food-recipes-with-rice-and-brown-rice-as.jpg?s=612x612&w=gi&k=20&c=QuqQ2wgvQazlitFvRhMuR2_nWZEf5CB3xa3FS4R0ffM=' alt="" /></p>
+
+                <ul>
+
+                 <li>Choose</li>
+
+                 <li>Order</li>
+
+                 <li>Place to serve</li>
+
+                 <li>Eat</li>
+
+                </ul>
+
+             
+
+                <p>none
+
+              <em>Healthy foods are those that provide you with the nutrients you need to sustain your body's well-being and retain energy. Water, carbohydrates, fat, protein, vitamins, and minerals are the key nutrients that make up a healthy, balanced diet.</em>Instructions: </p>
+
+          
+
+          </div>
+
+        </div>
+    )}
+  </div>
+</div>  
+
+  </div>
+  {/*  */}
+  <div  style={{display:'flex', flexDirection:'row' }}>
+ 
+  <div className="flex flex-wrap -mx-4">
+    <div className=" md:w-1/2 xl:w-1/3 px-4 mb-4" >
+    <ul className="list-none mb-1 flex items-start justify-evenly py-1 md:py-1 flex-wrap">
+        {categories.map((category) => (
+          <li key={category.idCategory} onClick={() => handleCategoryClick(category)}>
+            <button
+              type="button"
+              style={{Background: '#F7F7F7'}}
+              className="py-2.5 px-5 me-2 mb-2 text-sm font-medium  focus:outline-none bg-white rounded-full  hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            >
+              {category.strCategory}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div style={{
+  display: 'flex',
+  flexDirection: 'row',
+  width: '100%',
+  height: '100vh',
+  margin: '0 auto'
+}}>
+  
+  {/* Left side */}
+  <div style={{
+    width: '33.33%', // Add this line
+    height: '100vh', // Update this line
+    backgroundColor: 'transparent'
+  }}>
+    {meals.length > 0 ? (
+      <div style={{
+        overflowY: 'scroll',
+        height: '80%', // Update this line
+        backgroundColor: 'transparent',
+      }}>
+        <div >
+          {meals.map((meal) => (
+            <Card
+              key={meal.idMeal}
+              meal={meal}
+              imageUrl={meal.strMealThumb}
+              searchQuery={searchQuery}
+              onClick={handleCardClick}
+            />
+          ))}
+        </div>
+      </div>
+    ) : (
+      <div style={{
+        backgroundColor: 'transparent',
+        overflowY: 'scroll',
+        height: '80%', // Update this line
+      }}>
+        {defaultImages.map((meal) => (
+          <Card
+            key={meal.idMeal}
+            meal={meal}
+            imageUrl={meal.strMealThumb}
+            onClick={handleCardClick}
+          />
+        ))}
+      </div>
+    )}
+  </div>
+
+  {/* Right side */}
+  <div style={{
+    width: '66.66%', // Add this line
+    height: '100vh', // Update this line
+  }}>
+    {selectedMeal ? (
+      <MealDetail meal={selectedMeal} recipe={recipe} />
+    ) : (
+      <div className="wrap-card card-animate-card card-pop-card">
+
+          <div className="overlay-card">
+
+            <div className="overlay-content-card card-animate-card slide-left-card delay-2-card">
+
+              <h1 className="h1-card card-animate-card slide-left-card card-pop-card delay-4-card"></h1>
+
+              <p className="p-card card-animate-card slide-left-card card-pop-card delay-5-card" style={{color: 'white', marginBottom: '2.5rem'}}>: <em></em></p>
+
+            </div>
+
+            <div className="image-content-card card-animate-card slide-card delay-5-card" style={{backgroundImage: `url(https://media.gettyimages.com/id/1363638825/photo/vegan-plant-based-asian-food-recipes-with-rice-and-brown-rice-as.jpg?s=612x612&w=gi&k=20&c=QuqQ2wgvQazlitFvRhMuR2_nWZEf5CB3xa3FS4R0ffM=)`}}></div>
+
+            <div className="dots-card card-animate-card">
+
+              <div className="dot-card card-animate-card slide-up-card delay-6-card"></div>
+
+              <div className="dot-card card-animate-card slide-up-card delay-7-card"></div>
+
+              <div className="dot-card card-animate-card slide-up-card delay-8-card"></div>
+
+            </div>
+
+          </div>
+
+          <div className="text-card">
+
+            <p className='p-card'><img className="inset-card" src='https://media.gettyimages.com/id/1363638825/photo/vegan-plant-based-asian-food-recipes-with-rice-and-brown-rice-as.jpg?s=612x612&w=gi&k=20&c=QuqQ2wgvQazlitFvRhMuR2_nWZEf5CB3xa3FS4R0ffM=' alt="" /></p>
+
+                <ul>
+
+                 <li>Choose</li>
+
+                 <li>Order</li>
+
+                 <li>Place to serve</li>
+
+                 <li>Eat</li>
+
+                </ul>
+
+             
+
+                <p>none
+
+              <em>Healthy foods are those that provide you with the nutrients you need to sustain your body's well-being and retain energy. Water, carbohydrates, fat, protein, vitamins, and minerals are the key nutrients that make up a healthy, balanced diet.</em>Instructions: </p>
+
+          
+
+          </div>
+
+        </div>
+    )}
+  </div>
+</div>  
+
+  </div>
+
+</div>
+  {/*  */}
       </>
     )
   }

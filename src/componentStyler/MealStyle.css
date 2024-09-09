@@ -134,13 +134,13 @@ body {
 	background: white;
 }
 
-/* Animations and timing delays */
+
 .card-animate-card {
 	animation-duration: 0.7s;
 	animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
 	animation-fill-mode: backwards;
 }
-/* card-pop In */
+
 .card-pop-card {
 	animation-name: card-pop-card;
 }
@@ -155,7 +155,7 @@ body {
 	}
 }
 
-/* Slide In */
+
 .slide-card {
 	animation-name: slide-card;
 }
@@ -170,7 +170,6 @@ body {
 	}
 }
 
-/* Slide Left */
 .slide-left-card {
 	animation-name: slide-left-card;
 }
@@ -223,3 +222,64 @@ body {
 .delay-8-card {
 	animation-delay: 2.4s;
 }
+@media only screen and (max-width: 1024px) {
+	.wrap-card {
+	  width: 70vmin;
+	  height: 55vmin;
+	}
+	.overlay-card {
+	  padding: 0.75rem 0.5rem;
+	}
+	.overlay-content-card {
+	  width: 12vmin;
+	  padding: 0.5rem 0 0 0.5rem;
+	}
+	.image-content-card {
+	  width: 70vmin;
+	}
+	.text-card {
+	  width: 55vmin;
+	  padding: 2.5vmin 2.5vmin;
+	}
+	.dots-card {
+	  bottom: 0.75rem;
+	  right: 1.5rem;
+	  width: 50px;
+	  height: 3.5vmin;
+	}
+	.dot-card {
+	  width: 12px;
+	  height: 12px;
+	}
+  }
+  
+  @media only screen and (min-width: 1200px) {
+	.wrap-card {
+	  width: 90vmin;
+	  height: 65vmin;
+	}
+	.overlay-card {
+	  padding: 1rem 1rem;
+	}
+	.overlay-content-card {
+	  width: 15vmin;
+	  padding: 0.75rem 0 0 0.75rem;
+	}
+	.image-content-card {
+	  width: 90vmin;
+	}
+	.text-card {
+	  width: 65vmin;
+	  padding: 3vmin 3vmin;
+	}
+	.dots-card {
+	  bottom: 1rem;
+	  right: 2rem;
+	  width: 60px;
+	  height: 4vmin;
+	}
+	.dot-card {
+	  width: 14px;
+	  height: 14px;
+	}
+  }
