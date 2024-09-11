@@ -4,8 +4,6 @@ import "../componentStyler/MealStyle.css"
 import MealDetail from '../components/MealDetail';
 import Banner from '../components/Banner'; // new component
 import Footer from '../components/Footer';
-import TestemonyCard from '../components/TestemonyCard'
-import indo from '../images/indomixicon.svg'
 import 'flowbite'
 
 const MealList = () => {
@@ -25,7 +23,7 @@ const MealList = () => {
 
 
   useEffect(() => {
-
+// data fetch
     async function fetchCategories() {
 
       try {
@@ -281,6 +279,7 @@ const MealList = () => {
       <MealDetail meal={selectedMeal} recipe={recipe} />
     ) : (
       <div className="wrap-card card-animate-card card-pop-card">
+
           <div className="overlay-card">
             <div className="overlay-content-card card-animate-card slide-left-card delay-2-card">
               <h1 className="h1-card card-animate-card slide-left-card card-pop-card delay-4-card"></h1>
@@ -294,7 +293,9 @@ const MealList = () => {
             </div>
           </div>
           <div className="text-card">
-            <p className='p-card'><img className="inset-card" src='https://media.gettyimages.com/id/1363638825/photo/vegan-plant-based-asian-food-recipes-with-rice-and-brown-rice-as.jpg?s=612x612&w=gi&k=20&c=QuqQ2wgvQazlitFvRhMuR2_nWZEf5CB3xa3FS4R0ffM=' alt="" /></p>
+            <p className='p-card'><img className="inset-card" src='https://media.gettyimages.com/id/1363638825/photo/vegan-plant-based-asian-food-recipes-with-rice-and-brown-rice-as.jpg?s=612x612&w=gi&k=20&c=QuqQ2wgvQazlitFvRhMuR2_nWZEf5CB3xa3FS4R0ffM=' alt="" />
+            <em>Healthy foods are those that provide you with the nutrients you need to sustain your body's well-being and retain energy. Water, carbohydrates, fat, protein, vitamins, and minerals are the key nutrients that make up a healthy, balanced diet.</em>
+            </p>
                 <ul>
                  <li>Choose</li>
                  <li>Order</li>
@@ -302,8 +303,13 @@ const MealList = () => {
                  <li>Eat</li>
                 </ul>
                 <p>
-              <em>Healthy foods are those that provide you with the nutrients you need to sustain your body's well-being and retain energy. Water, carbohydrates, fat, protein, vitamins, and minerals are the key nutrients that make up a healthy, balanced diet.</em> </p>
+
+               </p>
+
+          
+
           </div>
+
         </div>
     )}
   </div>
