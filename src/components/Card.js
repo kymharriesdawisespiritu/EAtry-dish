@@ -14,12 +14,10 @@ const Card = ({ meal, imageUrl, onClick }) => {
         <div className="card-slide">
           <h6 className="card-para">{meal.strCategory}</h6>
           <div className="card-line">
-            <h6 className="card-para">OUT</h6> <i className="fa fa-plane" aria-hidden="true"></i>
-            <h6 className="card-para">£849</h6>
+            <h6 className="card-para"></h6> <i className="fa fa-plane" aria-hidden="true"></i>
           </div>
           <div className="card-line">
-            <h6 className="card-para">RTN</h6> <i className="fa fa-plane" aria-hidden="true"></i>
-            <h6 className="card-para">£659</h6>
+            <h6 className="card-para">{meal.strMeal}</h6> <i className="fa fa-plane" aria-hidden="true"></i>
           </div>
         </div>
       </div>

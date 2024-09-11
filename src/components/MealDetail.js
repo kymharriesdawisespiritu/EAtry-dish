@@ -1,4 +1,5 @@
 import React from 'react';
+import "../componentStyler/MealStyle.css"
 const MealDetail = ({ meal, recipe }) => {
   if (!meal || !recipe) return null;
 

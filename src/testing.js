@@ -411,6 +411,26 @@ margin: '0 auto'
 
 </div>
   {/*  */}
+  <div className="bg-orange-500 py-4">
+      <div className="container mx-auto p-4">
+        <h2 className="text-2xl font-bold">Sign In</h2>
+        <form onSubmit={handleSignIn}>
+          <input
+            type="text"
+            value={username}
+            onChange={handleUsernameChange}
+            placeholder="Username"
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+            placeholder="Password"
+          />
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
+    </div>
       </>
     )
   }
