@@ -281,57 +281,29 @@ const MealList = () => {
       <MealDetail meal={selectedMeal} recipe={recipe} />
     ) : (
       <div className="wrap-card card-animate-card card-pop-card">
-
           <div className="overlay-card">
-
             <div className="overlay-content-card card-animate-card slide-left-card delay-2-card">
-
               <h1 className="h1-card card-animate-card slide-left-card card-pop-card delay-4-card"></h1>
-
               <p className="p-card card-animate-card slide-left-card card-pop-card delay-5-card" style={{color: 'white', marginBottom: '2.5rem'}}>: <em></em></p>
-
             </div>
-
             <div className="image-content-card card-animate-card slide-card delay-5-card" style={{backgroundImage: `url(https://media.gettyimages.com/id/1363638825/photo/vegan-plant-based-asian-food-recipes-with-rice-and-brown-rice-as.jpg?s=612x612&w=gi&k=20&c=QuqQ2wgvQazlitFvRhMuR2_nWZEf5CB3xa3FS4R0ffM=)`}}></div>
-
             <div className="dots-card card-animate-card">
-
               <div className="dot-card card-animate-card slide-up-card delay-6-card"></div>
-
               <div className="dot-card card-animate-card slide-up-card delay-7-card"></div>
-
               <div className="dot-card card-animate-card slide-up-card delay-8-card"></div>
-
             </div>
-
           </div>
-
           <div className="text-card">
-
             <p className='p-card'><img className="inset-card" src='https://media.gettyimages.com/id/1363638825/photo/vegan-plant-based-asian-food-recipes-with-rice-and-brown-rice-as.jpg?s=612x612&w=gi&k=20&c=QuqQ2wgvQazlitFvRhMuR2_nWZEf5CB3xa3FS4R0ffM=' alt="" /></p>
-
                 <ul>
-
                  <li>Choose</li>
-
                  <li>Order</li>
-
                  <li>Place to serve</li>
-
                  <li>Eat</li>
-
                 </ul>
-
-             
-
                 <p>
-
               <em>Healthy foods are those that provide you with the nutrients you need to sustain your body's well-being and retain energy. Water, carbohydrates, fat, protein, vitamins, and minerals are the key nutrients that make up a healthy, balanced diet.</em> </p>
-
-          
-
           </div>
-
         </div>
     )}
   </div>
