@@ -20,7 +20,7 @@ const MealDetail = ({ meal, recipe }) => {
     </div>
   </div>
   <div className="text-card">
-    <p className='p-card'><img className="inset-card" src={meal.strMealThumb} alt="" />{recipe.ingredients ? (
+    <p style={{marginLeft:"5%"}} className='p-card'><img className="inset-card" src={meal.strMealThumb} alt="" /><em style={{width:"100%"}}>{meal.strMeal}</em>{recipe.ingredients ? (
         <ul>
           {recipe.ingredients.map((ingredient, index) => (
             <li key={index}>{ingredient}</li>
@@ -28,7 +28,7 @@ const MealDetail = ({ meal, recipe }) => {
         </ul>
       ) : (
       <span></span>
-      )} <em>{meal.strMeal}</em>Instructions: {recipe.strInstructions}</p>
+      )} Instructions: {recipe.strInstructions}</p>
   
   </div>
 </div>
