@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/EAtry-dish/static/css/main.2ab6d620.css",
+    "main.css": "/EAtry-dish/static/css/main.d85040fe.css",
     "main.js": "/EAtry-dish/static/js/main.e16661a3.js",
     "static/js/453.80fee085.chunk.js": "/EAtry-dish/static/js/453.80fee085.chunk.js",
     "index.html": "/EAtry-dish/index.html",
-    "main.2ab6d620.css.map": "/EAtry-dish/static/css/main.2ab6d620.css.map",
+    "main.d85040fe.css.map": "/EAtry-dish/static/css/main.d85040fe.css.map",
     "main.e16661a3.js.map": "/EAtry-dish/static/js/main.e16661a3.js.map",
     "453.80fee085.chunk.js.map": "/EAtry-dish/static/js/453.80fee085.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2ab6d620.css",
+    "static/css/main.d85040fe.css",
     "static/js/main.e16661a3.js"
   ]
 }
